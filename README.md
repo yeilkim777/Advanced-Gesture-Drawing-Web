@@ -4,9 +4,7 @@ Updated the previous advanced drawing application to be a website. Used firebase
 https://advanced-gesture-application.web.app/
 
 ## Features
-Folder upload
-15 seconds to 15 minutes timing
-Photo editor with grayscale, contrast, saturation and brightness
+Gesture drawing application with 15 seconds to 15 minutes timing, Photo editor with grayscale, contrast, saturation and brightness and Folder of own reference can be uploaded.
 
 ## Libraries and Frameworks 
 Bulma
