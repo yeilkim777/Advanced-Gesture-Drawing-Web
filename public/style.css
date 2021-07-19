@@ -1,0 +1,12 @@
+#fileSubmit {
+    width: 300px;
+    height: 300px;
+}
+
+/* #submitButton button {
+    margin-left: 12px !important; 
+} */
+
+::-webkit-scrollbar {
+    display: none;
+}
