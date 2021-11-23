@@ -9,19 +9,6 @@ let gestureSession;
 let timer, minutes, seconds;
 let grayBoolean = true;
 
-// let session = {
-//   files: null,
-//   time: null,
-//   backForthArray: null,
-//   traverser: 0,
-//   pauseTime: false,
-//   gestureSession,
-//   timer, minutes, seconds,
-//   grayBoolean:true
-// }
-
-
-
 class FileInput extends Component {
   constructor() {
     super();
@@ -51,9 +38,27 @@ class FileInput extends Component {
 
   render() {
     return (
-      <div id='formDiv' class="columns is-mobile is-centered is-multiline">
-        <div id="fileSubmit" class="column is-narrow m-6 box">
+      <div id='formDiv' class="columns is-mobile is-centered">
+        <div class = "column m-6 box is-one-quarter is-info content">
+          <h3 class = "is-size-3-tablet">Advanced Gesture Drawing Application</h3>
+          <h4>Instructions:</h4>
+          <ol>   
+            <li>Select a folder of reference images.</li>
+            <li>Choose the time interval.</li>
+            <li>Start your drawing session.</li>
+          </ol>
+          <h4>    
+            The provided editor can change:
+          </h4>
+          <ul>
+            <li>Contrast</li>
+            <li>Saturation</li>
+            <li>Brightness</li>
+            <li>Grayscale</li>
+          </ul>
 
+        </div>
+        <div id="fileSubmit" class="column is-narrow m-6 box">
           <div class="file is-large has-name is-boxed is-info block">
             <label class="file-label">
               <input class="file-input" type="file" name="fileList" id="files" webkitdirectory='multiple' onChange={this.fileConfirm} />
@@ -62,15 +67,13 @@ class FileInput extends Component {
                   <i class="fas fa-upload"></i>
                 </span>
                 <span class="file-label">
-                  Choose a folder
+                  Select an image folder
                 </span>
               </span>
               <span class="file-name" >
               </span>
             </label>
           </div>
-
-
           <div class="select is-rounded is-medium container">
             <select id='timeForm' >
               <option value="15000"> 15 seconds </option>
@@ -88,7 +91,9 @@ class FileInput extends Component {
           <button type="button" class="button is-medium is-info is-rounded ml-3" onClick={this.processFile}>Start</button>
           {/* </div> */}
         </div>
-      </div>);
+        
+      </div>
+      );
 
   }
 }
@@ -127,9 +132,9 @@ class SlideShow extends Component {
       clearInterval(gestureSession);
     } else {
       clearInterval(gestureSession);
-      this.setup()
       traverser += 1;
       this.openFile(files[backForthArray[traverser]])
+      this.setup()
     }
 
   }
@@ -152,9 +157,9 @@ class SlideShow extends Component {
       clearInterval(gestureSession);
     } else {
       clearInterval(gestureSession);
-      this.setup()
       traverser -= 1;
       this.openFile(files[backForthArray[traverser]])
+      this.setup()
     }
   }
 
@@ -180,8 +185,6 @@ class SlideShow extends Component {
     pauseTime = false;
     grayBoolean = true;
     this.greatReset()
-
-
     timer = 0;
     minutes = 0;
     seconds = 0;
@@ -220,7 +223,7 @@ class SlideShow extends Component {
 
   setup() {
     timer = time;
-    setTimeout(this.imageTimer, 5)
+    setTimeout(this.imageTimer, 10)
     gestureSession = setInterval(this.imageTimer, 1000)
   }
 
